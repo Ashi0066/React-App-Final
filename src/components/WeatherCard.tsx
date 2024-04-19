@@ -57,7 +57,7 @@ const WeatherCard: React.FC = () => {
   };
 
   return (
-    <Card  className="max-w-[100%] h-[540px]">
+    <Card  className="max-w-[100%] h-[640px]">
       <CardHeader className="flex flex-col justify-center items-center h-[40%] ">
       <form
           onSubmit={(e) => {
