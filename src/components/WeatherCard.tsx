@@ -9,6 +9,7 @@ import {
 } from "@nextui-org/react";
 import { useState } from "react";
 import { TiWeatherDownpour, TiWeatherSunny } from "react-icons/ti";
+import { GiEarthCrack, GiGooExplosion } from "react-icons/gi";
 
 import { getWeatherData,getSeismiccData } from "../api/actions";
 
@@ -56,7 +57,7 @@ const WeatherCard: React.FC = () => {
   };
 
   return (
-    <Card  className="max-w-[100%] h-[440px]">
+    <Card  className="max-w-[100%] h-[540px]">
       <CardHeader className="flex flex-col justify-center items-center h-[40%] ">
       <form
           onSubmit={(e) => {
@@ -128,14 +129,20 @@ const WeatherCard: React.FC = () => {
       {activeTab === "seismic" && (
         <CardBody>
           {SeismicData ? (
+            
             <div className="flex flex-col items-center">
-              <h1 className="text-3xl font-bold">Seismic Data</h1>
+              {SeismicData.eventType === "earthquake"?(
+                <GiEarthCrack className="w-36 h-36"/>
+              ):(<GiGooExplosion className="w-36 h-36"/>)}
+              
               <p>Latitude: {SeismicData.latitude}</p>
               <p>Longitude: {SeismicData.longitude}</p>
               <p>Depth: {SeismicData.depth} km</p>
               <p>Magnitude: {SeismicData.magnitude}</p>
               <p>Event Type: {SeismicData.eventType}</p>
               <p>Date: {new Date(SeismicData.date).toLocaleDateString()}</p>
+              
+
             </div>
           ) : (
             <div className="flex flex-col items-center">
