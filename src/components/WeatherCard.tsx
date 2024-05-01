@@ -140,7 +140,7 @@ const WeatherCard: React.FC = () => {
               <p>Depth: {SeismicData.depth} km</p>
               <p>Magnitude: {SeismicData.magnitude}</p>
               <p>Event Type: {SeismicData.eventType}</p>
-              <p>Date: {new Date(SeismicData.date).toLocaleDateString()}</p>
+           
               
 
             </div>
