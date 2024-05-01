@@ -43,7 +43,7 @@ export const getSeismiccData = async (city: string): Promise<SeismicData> => {
           depth: res.data.depth,
           magnitude: res.data.magnitude,
           eventType: res.data.eventType, // Type of seismic event (e.g., earthquake, explosion)
-           date: res.data.string, 
+       
         });
       })
       .catch((error) => {
